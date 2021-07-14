@@ -1,5 +1,5 @@
 import sum from './sum';
-import './app.css';
+import './app.scss';
 import chat from './images/video-chat.png';
 
 const result = sum([1, 2, 3, 4, 5]);
