@@ -1,4 +1,4 @@
-const sum = (numbers: number[]) =>
+const sum = (numbers: number[]): number =>
   numbers.reduce((a: number, b: number) => a + b);
 
 export default sum;
