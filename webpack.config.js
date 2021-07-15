@@ -67,8 +67,6 @@ module.exports = {
               collapseWhitespace: true,
             }
           : false,
-
-      inject: 'body',
     }),
     new CleanWebpackPlugin(),
     ...(process.env.NODE_ENV === 'production'
