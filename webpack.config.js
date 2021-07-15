@@ -1,7 +1,10 @@
+/* eslint-disable no-undef */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const mode = process.env.NODE_ENV || 'development';
 
@@ -13,6 +16,14 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
+  },
+  devServer: {
+    stats: 'errors-only',
+    overlay: true,
+    hot: true,
+  },
+  optimization: {
+    minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
   },
   module: {
     rules: [
